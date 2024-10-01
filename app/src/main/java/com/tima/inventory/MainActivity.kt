@@ -19,6 +19,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.tima.inventory.ui.theme.TimeScreen
+import com.tima.inventory.ui.theme.Time_SCREEN
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +61,7 @@ fun MyApp() {
             composable(SCREEN_HOME) { ScreenHome(navController) }
             composable(SCREEN_WALK) { ScreenWalk(navController) }
             composable(FON_SCREEN) { FonScreen() }
+            composable(Time_SCREEN) { TimeScreen() }
 
         }
     }
@@ -83,6 +86,9 @@ fun MainScreen(navController: NavHostController) {
         }
         Button(onClick = { navController.navigate(FON_SCREEN) }) {
             Text(text = "Смена цвета")
+        }
+        Button(onClick = { navController.navigate(Time_SCREEN) }) {
+            Text(text = "Время")
         }
     }
 }
