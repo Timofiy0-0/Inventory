@@ -100,3 +100,4 @@ fun MainScreen(navController: NavHostController) {
         }
     }
 }
+val newscreen = "newscreen"
