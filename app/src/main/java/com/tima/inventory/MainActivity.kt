@@ -19,6 +19,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.tima.inventory.ui.theme.LIST_SCREEN
+import com.tima.inventory.ui.theme.Listscreen
 import com.tima.inventory.ui.theme.TimeScreen
 import com.tima.inventory.ui.theme.Time_SCREEN
 
@@ -62,6 +64,7 @@ fun MyApp() {
             composable(SCREEN_WALK) { ScreenWalk(navController) }
             composable(FON_SCREEN) { FonScreen() }
             composable(Time_SCREEN) { TimeScreen() }
+            composable(LIST_SCREEN) { Listscreen() }
 
         }
     }
@@ -89,6 +92,11 @@ fun MainScreen(navController: NavHostController) {
         }
         Button(onClick = { navController.navigate(Time_SCREEN) }) {
             Text(text = "Время")
+
+        }
+        Button(onClick = { navController.navigate(LIST_SCREEN) }) {
+            Text(text = "Cписок")
+
         }
     }
 }
