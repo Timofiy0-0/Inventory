@@ -19,10 +19,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.tima.inventory.ui.theme.LIST_SCREEN
-import com.tima.inventory.ui.theme.Listscreen
-import com.tima.inventory.ui.theme.TimeScreen
-import com.tima.inventory.ui.theme.Time_SCREEN
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,58 +40,15 @@ fun MyApp() {
         val navController = rememberNavController()
         NavHost(
             navController = navController,
-            startDestination = MAIN_SCREEN,
+            startDestination = INVENTORY_SCREEN,
             modifier = Modifier.padding(padding)
         ) {
-            composable(MAIN_SCREEN) { MainScreen(navController) }
-
-            composable(CITY_SCREEN) { CityScreen(navController) }
-
-            composable(TEST_SCREEN) { TestScreen(navController) }
 
             composable(INVENTORY_SCREEN) { InventoryScreen(navController) }
             composable(ADD_ITEM_SCREEN) { AddItemScreen(navController) }
             composable(EDIT_ITEM_SCREEN) { EditItemScreen(navController) }
             composable(ITEM_DETAILS_SCREEN) { ItemDetailsScreen(navController) }
 
-            composable(SCREEN_HOUSE) { ScreenHouse(navController) }
-            composable(SCREEN_ATB) { ScreenAtb(navController) }
-            composable(SCREEN_HOME) { ScreenHome(navController) }
-            composable(SCREEN_WALK) { ScreenWalk(navController) }
-            composable(FON_SCREEN) { FonScreen() }
-            composable(Time_SCREEN) { TimeScreen() }
-            composable(LIST_SCREEN) { Listscreen() }
-
-        }
-    }
-}
-
-val MAIN_SCREEN = "Main screen"
-
-@Composable
-fun MainScreen(navController: NavHostController) {
-    Column(modifier = Modifier.fillMaxSize()) {
-        Button(onClick = { navController.navigate(INVENTORY_SCREEN) }) {
-            Text(text = "Инвентарь")
-        }
-        Button(onClick = { navController.navigate(CITY_SCREEN) }) {
-            Text(text = "Ваш город")
-        }
-        Button(onClick = { navController.navigate(SCREEN_HOUSE) }) {
-            Text(text = "Гуляние")
-        }
-        Button(onClick = { navController.navigate(TEST_SCREEN) }) {
-            Text(text = "Тестовый экран")
-        }
-        Button(onClick = { navController.navigate(FON_SCREEN) }) {
-            Text(text = "Смена цвета")
-        }
-        Button(onClick = { navController.navigate(Time_SCREEN) }) {
-            Text(text = "Время")
-
-        }
-        Button(onClick = { navController.navigate(LIST_SCREEN) }) {
-            Text(text = "Cписок")
 
         }
     }
