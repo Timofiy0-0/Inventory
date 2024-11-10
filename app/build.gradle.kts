@@ -5,6 +5,7 @@ plugins {
 
 }
 
+
 android {
     namespace = "com.tima.inventory"
     compileSdk = 35

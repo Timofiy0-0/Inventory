@@ -13,6 +13,7 @@ class ItemViewModel(application: Application) : AndroidViewModel(application) {
     var selectedItem: Item? = null
     val allItems = itemDao.getAllItems()
 
+
     // Добавить новый элемент
     fun insertItem(item: Item) = viewModelScope.launch {
         itemDao.insert(item)

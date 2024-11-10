@@ -57,6 +57,7 @@ fun MyApp() {
                 },
                 colors = topAppBarColors(containerColor = MaterialTheme.colorScheme.primary)
             )
+
         },
         floatingActionButton = {
             if (currentRoute == INVENTORY_SCREEN)

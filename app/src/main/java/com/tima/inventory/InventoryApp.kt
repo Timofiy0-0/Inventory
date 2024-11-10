@@ -74,6 +74,7 @@ fun InventoryScreen(navController: NavHostController, viewModel: ItemViewModel) 
     }
 }
 
+
 @Composable
 fun ItemView(item: Item, onClick: (Item) -> Unit) {
     Row(
