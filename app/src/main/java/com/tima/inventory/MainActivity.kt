@@ -19,6 +19,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.tima.inventory.ui.theme.GUESS_SCREEN
+import com.tima.inventory.ui.theme.GuessScreen
 import com.tima.inventory.ui.theme.LIST_SCREEN
 import com.tima.inventory.ui.theme.Listscreen
 import com.tima.inventory.ui.theme.TimeScreen
@@ -65,12 +67,13 @@ fun MyApp() {
             composable(FON_SCREEN) { FonScreen() }
             composable(Time_SCREEN) { TimeScreen() }
             composable(LIST_SCREEN) { Listscreen() }
+            composable(GUESS_SCREEN) { GuessScreen() }
 
         }
     }
 }
 
-val MAIN_SCREEN = "Main screen"
+const val MAIN_SCREEN = "Main screen"
 
 @Composable
 fun MainScreen(navController: NavHostController) {
@@ -98,6 +101,9 @@ fun MainScreen(navController: NavHostController) {
             Text(text = "Cписок")
 
         }
+        Button(onClick = { navController.navigate(GUESS_SCREEN) }) {
+            Text(text = "Guess")
+
+        }
     }
 }
-val newscreen = "newscreen"
