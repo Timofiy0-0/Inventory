@@ -23,6 +23,10 @@ import com.tima.inventory.ui.theme.GUESS_SCREEN
 import com.tima.inventory.ui.theme.GuessScreen
 import com.tima.inventory.ui.theme.LIST_SCREEN
 import com.tima.inventory.ui.theme.Listscreen
+import com.tima.inventory.ui.theme.SOUNDBUTTON_SCREEN
+import com.tima.inventory.ui.theme.SOUND_SCREEN
+import com.tima.inventory.ui.theme.SoundButton
+import com.tima.inventory.ui.theme.SoundScreen
 import com.tima.inventory.ui.theme.TimeScreen
 import com.tima.inventory.ui.theme.Time_SCREEN
 
@@ -68,6 +72,8 @@ fun MyApp() {
             composable(Time_SCREEN) { TimeScreen() }
             composable(LIST_SCREEN) { Listscreen() }
             composable(GUESS_SCREEN) { GuessScreen() }
+            composable(SOUND_SCREEN) { SoundScreen() }
+            composable(SOUNDBUTTON_SCREEN) { SoundButton() }
 
         }
     }
@@ -103,6 +109,14 @@ fun MainScreen(navController: NavHostController) {
         }
         Button(onClick = { navController.navigate(GUESS_SCREEN) }) {
             Text(text = "Guess")
+
+        }
+        Button(onClick = { navController.navigate(SOUND_SCREEN) }) {
+            Text(text = "Звук")
+
+        }
+        Button(onClick = { navController.navigate(SOUNDBUTTON_SCREEN) }) {
+            Text(text = "Звук2")
 
         }
     }
