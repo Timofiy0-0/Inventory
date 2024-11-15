@@ -25,8 +25,10 @@ import com.tima.inventory.ui.theme.LIST_SCREEN
 import com.tima.inventory.ui.theme.Listscreen
 import com.tima.inventory.ui.theme.SOUNDBUTTON_SCREEN
 import com.tima.inventory.ui.theme.SOUND_SCREEN
+import com.tima.inventory.ui.theme.SPISOK_SCREEN
 import com.tima.inventory.ui.theme.SoundButton
 import com.tima.inventory.ui.theme.SoundScreen
+import com.tima.inventory.ui.theme.SpisokScreen
 import com.tima.inventory.ui.theme.TimeScreen
 import com.tima.inventory.ui.theme.Time_SCREEN
 
@@ -74,6 +76,7 @@ fun MyApp() {
             composable(GUESS_SCREEN) { GuessScreen() }
             composable(SOUND_SCREEN) { SoundScreen() }
             composable(SOUNDBUTTON_SCREEN) { SoundButton() }
+            composable(SPISOK_SCREEN) { SpisokScreen() }
 
         }
     }
@@ -117,6 +120,10 @@ fun MainScreen(navController: NavHostController) {
         }
         Button(onClick = { navController.navigate(SOUNDBUTTON_SCREEN) }) {
             Text(text = "Звук2")
+
+        }
+        Button(onClick = { navController.navigate(SPISOK_SCREEN) }) {
+            Text(text = "Список дел")
 
         }
     }
